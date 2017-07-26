@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Editor on daar.github.io</title>
+    <link>https://daar.github.io/tags/editor/</link>
+    <description>Recent content in Editor on daar.github.io</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 27 Jul 2017 23:51:59 -0400</lastBuildDate>
+    
+	<atom:link href="https://daar.github.io/tags/editor/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Live Editor</title>
+      <link>https://daar.github.io/post/live-editor/</link>
+      <pubDate>Thu, 27 Jul 2017 23:51:59 -0400</pubDate>
+      
+      <guid>https://daar.github.io/post/live-editor/</guid>
+      <description>A couple of days ago I decided to make another attempt to add a live view editor to blender. All previous attempts failed so far, but I found a nice tutorial explaining how to add one to blender 2.65. Some things have changed in the mean time in the blender source code, but the tutorial still covers about 80%. I&amp;rsquo;ve been using the clip editor as inspiration and copied quite some code over to the live view editor.</description>
+    </item>
+    
+  </channel>
+</rss>
