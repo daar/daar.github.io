@@ -3,6 +3,13 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://daar.github.io/post/live-editor/</loc>
+    <lastmod>2017-07-27T23:51:59-04:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://daar.github.io/post/my-first-post/</loc>
     <lastmod>2017-07-26T23:51:59-04:00</lastmod>
     <changefreq>monthly</changefreq>
@@ -18,7 +25,7 @@
   
   <url>
     <loc>https://daar.github.io/</loc>
-    <lastmod>2017-07-26T23:51:59-04:00</lastmod>
+    <lastmod>2017-07-27T23:51:59-04:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -27,6 +34,13 @@
     <loc>https://daar.github.io/about/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://daar.github.io/tags/blender/</loc>
+    <lastmod>2017-07-27T23:51:59-04:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -42,7 +56,29 @@
   </url>
   
   <url>
+    <loc>https://daar.github.io/tags/editor/</loc>
+    <lastmod>2017-07-27T23:51:59-04:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://daar.github.io/tags/live/</loc>
+    <lastmod>2017-07-27T23:51:59-04:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://daar.github.io/tags/</loc>
+    <lastmod>2017-07-27T23:51:59-04:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://daar.github.io/tags/view/</loc>
+    <lastmod>2017-07-27T23:51:59-04:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0</priority>
   </url>
