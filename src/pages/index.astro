@@ -44,6 +44,14 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 					>astro-blog-template
 				</a> by <a href="https://twitter.com/Charca">Maxi Ferreira</a>.
 			</p>
+
+			<div id="search"></div>
+			<script>
+				window.addEventListener('DOMContentLoaded', (event) => {
+					// @ts-ignore
+					new PagefindUI({ element: "#search", showSubResults: true });
+				});
+			</script>
 		</main>
 		<Footer />
 	</body>

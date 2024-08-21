@@ -5,16 +5,20 @@
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "astro check && astro build",
+    "build": "astro check && astro build && pagefind --site dist && node scripts/copy-pagefind.js",
     "preview": "astro preview",
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/check": "^0.9.2",
     "@astrojs/mdx": "^3.1.3",
     "@astrojs/rss": "^4.0.7",
     "@astrojs/sitemap": "^3.1.6",
     "astro": "^4.14.0",
-    "@astrojs/check": "^0.9.2",
     "typescript": "^5.5.4"
+  },
+  "devDependencies": {
+    "fs-extra": "^11.2.0",
+    "pagefind": "^1.1.0"
   }
 }
