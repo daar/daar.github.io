@@ -1,8 +1,8 @@
 ---
-title: 'Quinacare Website Update: Belang, Voordelen en Aanpak'
-description: 'Lorem ipsum dolor sit amet'
+title: 'Quinacare Website Update'
+description: 'Belang, Voordelen en Aanpak'
 pubDate: 'Aug 22 2024'
-heroImage: '/blog-placeholder-3.jpg'
+heroImage: '../../assets/quinacare-website.png'
 ---
 
 ## Inleiding
