@@ -9,8 +9,8 @@ const news = defineCollection({
 		// Transform string to Date object
 		pubDate: z.coerce.date(),
 		updatedDate: z.coerce.date().optional(),
-		heroImage: image().refine((img) => img.width >= 1080, {
-			message: "Cover image must be at least 1080 pixels wide!",
+		heroImage: image().refine((img) => img.width >= 960, {
+			message: "Cover image must be at least 960 pixels wide!",
 		}),
 	}),
 });

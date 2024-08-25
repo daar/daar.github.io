@@ -8,7 +8,7 @@ readTime: "5 min read"
 views: 1200
 tags: ["astro", "web development"]
 category: "category1"
-heroImage: '../../../../assets/quinacare-website.png'
+heroImage: '../../../../assets/blog-placeholder-2.jpg'
 ---
 
 Content in English...
