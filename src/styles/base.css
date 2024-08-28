@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+    scroll-behavior: smooth;
+    font-family: 'Inter', sans-serif;
+}
+
+.selected-tab {
+    color: #ff3b3b; /* Custom red color */
+    font-weight: bold; /* Make the selected tab bold */
+  }
+  
+  /* Optionally, add hover or active styles */
+  .selected-tab:hover {
+    color: #ff3b3bc5;
+  }

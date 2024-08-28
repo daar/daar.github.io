@@ -1,0 +1,151 @@
+---
+import '../styles/base.css';
+---
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog Roll</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@pagefind/browser@0.9.0/pagefind.css">
+  <script src="https://cdn.jsdelivr.net/npm/@pagefind/browser@0.9.0/pagefind.js" defer></script>
+  <style>
+    #mobile-search {
+      transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
+      max-height: 0;
+      opacity: 0;
+      overflow: hidden;
+    }
+
+    #mobile-search.show {
+      max-height: 100px;
+      opacity: 1;
+    }
+  </style>
+</head>
+<body class="bg-white text-gray-800">
+
+  <div class="container mx-auto py-8 px-4 md:flex">
+    <!-- Left Sidebar for Large Screens -->
+    <aside class="w-1/4 p-4 hidden md:block">
+      <!-- Tag Cloud -->
+      <div class="mb-8">
+        <h2 class="text-lg font-semibold mb-4">Tags</h2>
+        <div class="flex flex-wrap gap-2">
+          <a href="#" class="bg-gray-200 text-gray-600 px-3 py-1 rounded-full text-sm">Technology</a>
+          <a href="#" class="bg-gray-200 text-gray-600 px-3 py-1 rounded-full text-sm">Design</a>
+          <a href="#" class="bg-gray-200 text-gray-600 px-3 py-1 rounded-full text-sm">Culture</a>
+          <a href="#" class="bg-gray-200 text-gray-600 px-3 py-1 rounded-full text-sm">Business</a>
+          <a href="#" class="bg-gray-200 text-gray-600 px-3 py-1 rounded-full text-sm">Health</a>
+        </div>
+      </div>
+
+      <!-- Search Bar -->
+      <div class="mb-8">
+        <input type="text" id="search-input" class="w-full p-2 border border-gray-300 rounded-md" placeholder="Search...">
+      </div>
+    </aside>
+
+    <!-- Search Icon for Medium and Small Screens -->
+    <div class="md:hidden flex justify-end mb-4">
+      <button id="search-icon" class="p-2 rounded-full border border-gray-300">
+        🔍
+      </button>
+    </div>
+
+    <!-- Search Bar for Small Screens -->
+    <div id="mobile-search" class="md:hidden w-full mb-4">
+      <input type="text" id="mobile-search-input" class="w-full p-2 border border-gray-300 rounded-md" placeholder="Search...">
+    </div>
+
+    <!-- Main Content -->
+    <main class="w-full md:w-3/4 md:pl-4">
+      <!-- Tabs -->
+      <div class="mb-8">
+        <div class="flex gap-4 border-b border-gray-300 pb-2">
+          <a href="#" class="selected-tab">All</a>
+          <a href="#" class="text-gray-600">Technology</a>
+          <a href="#" class="text-gray-600">Design</a>
+          <a href="#" class="text-gray-600">Business</a>
+          <a href="#" class="text-gray-600">Culture</a>
+        </div>
+      </div>
+
+      <!-- Blog Post -->
+      <article class="mb-8 pb-8 border-b border-gray-200 flex">
+        <img src="https://picsum.photos/300/200" alt="Hero Image" class="w-1/4 h-auto object-cover rounded-md mr-6 md:w-72 md:h-auto sm:w-[150px] sm:h-[100px]">
+        <div class="w-3/4">
+          <div class="flex items-center mb-4">
+            <img src="https://picsum.photos/30" alt="Author Avatar" class="w-8 h-8 rounded-full mr-4">
+            <span class="text-gray-600 font-bold">John Doe</span>
+          </div>
+          <h2 class="text-2xl font-bold mb-2">Understanding the Basics of Tailwind CSS</h2>
+          <p class="text-gray-600 mb-4">Tailwind CSS is a utility-first CSS framework that provides low-level utility classes...</p>
+          <div class="flex items-center justify-between text-gray-500 text-sm">
+            <span>5 min read</span>
+            <span>2.3K views</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Blog Post -->
+      <article class="mb-8 pb-8 border-b border-gray-200 flex">
+        <img src="https://picsum.photos/300/200" alt="Hero Image" class="w-1/4 h-auto object-cover rounded-md mr-6 md:w-72 md:h-auto sm:w-[150px] sm:h-[100px]">
+        <div class="w-3/4">
+          <div class="flex items-center mb-4">
+            <img src="https://picsum.photos/30" alt="Author Avatar" class="w-8 h-8 rounded-full mr-4">
+            <span class="text-gray-600 font-bold">Jane Smith</span>
+          </div>
+          <h2 class="text-2xl font-bold mb-2">The Future of Web Design with Tailwind CSS</h2>
+          <p class="text-gray-600 mb-4">With its utility-first approach, Tailwind CSS is changing the way we think about web design...</p>
+          <div class="flex items-center justify-between text-gray-500 text-sm">
+            <span>7 min read</span>
+            <span>1.9K views</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Blog Post -->
+      <article class="mb-8 pb-8 border-b border-gray-200 flex">
+        <img src="https://picsum.photos/300/200" alt="Hero Image" class="w-1/4 h-auto object-cover rounded-md mr-6 md:w-72 md:h-auto sm:w-[150px] sm:h-[100px]">
+        <div class="w-3/4">
+          <div class="flex items-center mb-4">
+            <img src="https://picsum.photos/30" alt="Author Avatar" class="w-8 h-8 rounded-full mr-4">
+            <span class="text-gray-600 font-bold">Alice Johnson</span>
+          </div>
+          <h2 class="text-2xl font-bold mb-2">How to Build Responsive Layouts with Tailwind CSS</h2>
+          <p class="text-gray-600 mb-4">Learn how to create fully responsive layouts using Tailwind’s powerful grid and flexbox utilities...</p>
+          <div class="flex items-center justify-between text-gray-500 text-sm">
+            <span>6 min read</span>
+            <span>3.1K views</span>
+          </div>
+        </div>
+      </article>
+    </main>
+  </div>
+
+  <!-- Pagefind Integration -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const search = new Pagefind();
+      const searchIcon = document.getElementById('search-icon');
+      const mobileSearch = document.getElementById('mobile-search');
+      const mobileSearchInput = document.getElementById('mobile-search-input');
+
+      if (mobileSearchInput) {
+        mobileSearchInput.addEventListener('input', function(event) {
+          search.search(event.target.value).then(results => {
+            console.log(results); // Handle search results here
+          });
+        });
+      }
+
+      if (searchIcon) {
+        searchIcon.addEventListener('click', function() {
+          mobileSearch.classList.toggle('show');
+        });
+      }
+    });
+  </script>
+</body>
+</html>
