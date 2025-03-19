@@ -11,6 +11,8 @@
   "dependencies": {
     "@tailwindcss/vite": "^4.0.14",
     "astro": "^5.5.3",
+    "nodemailer": "^6.10.0",
+    "resend": "^4.1.2",
     "tailwindcss": "^4.0.14"
   }
 }
