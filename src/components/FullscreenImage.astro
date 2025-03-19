@@ -1,0 +1,15 @@
+---
+import { Image } from "astro:assets";
+
+const { src, alt } = Astro.props;
+---
+
+<html class="h-full w-full">
+  <body class="h-full w-full flex justify-center items-center bg-white">
+    <Image 
+      src={src} 
+      alt={alt} 
+      class="max-w-full max-h-full w-auto h-auto object-contain"
+    />
+  </body>
+</html>

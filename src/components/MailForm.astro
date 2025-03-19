@@ -1,0 +1,92 @@
+---
+// import "../scripts/submit.js";
+---
+
+<style>
+  .slide-in {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  .slide-out {
+    transform: translateX(120%);
+    opacity: 0;
+  }
+</style>
+
+<!-- Floating Mail Icon -->
+<div 
+  id="mail-button"
+  class="fixed bottom-1/5 right-5 w-6 h-6 bg-black text-white rounded-full flex items-center justify-center shadow-md cursor-pointer hover:scale-110 transition"
+  onclick="toggleForm()"
+>
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
+    <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 12a4.5 4.5 0 1 1-9 0 4.5 4.5 0 0 1 9 0Zm0 0c0 1.657 1.007 3 2.25 3S21 13.657 21 12a9 9 0 1 0-2.636 6.364M16.5 12V8.25" />
+  </svg>
+</div>
+
+<!-- Contact Form -->
+<div 
+  id="mail-form-container"
+  class="fixed bottom-1/5 right-5 w-80 bg-white opacity-0 translate-y-10 rounded-lg p-4 shadow-lg transition-all duration-500 ease-in-out transform invisible"
+>
+  <p class="text-lg font-semibold text-gray-900 mb-2">Get in touch</p>
+  <form id="contact-form" class="space-y-4">
+    <input type="email" id="email" name="email" placeholder="Your Email" required class="w-full p-2 border border-gray-300 rounded" />
+    <textarea id="message" name="message" placeholder="Your Message" required class="w-full p-2 border border-gray-300 rounded"></textarea>
+    <div class="flex justify-between">
+      <button type="button" class="font-semibold text-gray-900 hover:text-gray-600 transition-colors duration-300" onclick="toggleForm()">Cancel</button>
+      <button type="submit" class="font-semibold text-gray-900 hover:text-gray-600 transition-colors duration-300">Send</button>
+    </div>
+    <p id="form-status" class="text-sm text-gray-600"></p>
+  </form>
+</div>
+
+<script is:inline>
+  document.addEventListener("DOMContentLoaded", function () {
+    const form = document.getElementById("contact-form");
+    const status = document.getElementById("form-status");
+
+    form.addEventListener("submit", async (event) => {
+      event.preventDefault();
+
+      const formData = new FormData(form);
+      const data = Object.fromEntries(formData.entries());
+
+      try {
+        const response = await fetch("/api/contact", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(data),
+        });
+
+        const result = await response.json();
+        if (response.ok) {
+          status.textContent = "Message sent!";
+          form.reset();
+          setTimeout(() => toggleForm(), 1000);
+        } else {
+          status.textContent = "Failed to send message.";
+        }
+      } catch (error) {
+        status.textContent = "Error sending message.";
+      }
+    });
+  });
+
+  function toggleForm() {
+    const form = document.getElementById("mail-form-container");
+    const button = document.getElementById("mail-button");
+
+    if (form.classList.contains("invisible")) {
+      form.classList.remove("invisible", "opacity-0", "translate-y-10");
+      form.classList.add("opacity-100", "translate-y-0");
+      button.style.display = "none";
+    } else {
+      form.classList.add("opacity-0", "translate-y-10");
+      setTimeout(() => {
+        form.classList.add("invisible");
+        button.style.display = "flex";
+      }, 500);
+    }
+  }
+</script>
