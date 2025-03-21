@@ -1,4 +1,7 @@
 ---
+import Footer from "../components/Footer.astro";
+import Logo from "../components/Logo.astro";
+import Menu from "../components/Menu.astro";
 import "../styles/global.css";
 ---
 
@@ -12,7 +15,12 @@ import "../styles/global.css";
 		<title>Astro Basics</title>
 	</head>
 	<body>
+		<Logo />
+		<Menu />
+
 		<slot />
+
+		<Footer />
 	</body>
 </html>
 
