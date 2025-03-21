@@ -1,0 +1,75 @@
+---
+import { Image } from 'astro:assets';
+import Layout from '../layouts/Layout.astro'; 
+
+import aboutImage from '../assets/wp006.jpg';
+---
+
+<style>
+    /* Smooth Fade-In Transition */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+    }
+  
+    .fade-in-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  
+    /* Column Flexbox Setup */
+    .column {
+      flex: 1;
+    }
+  
+    /* Golden Ratio Column Width */
+    .golden-column {
+      flex-basis: 0;
+      flex-grow: 1;
+    }
+  
+    /* Justify Content and Align Text */
+    .bio {
+      text-align: justify;
+      line-height: 1.75;
+    }
+  
+    /* Image styling */
+    .image {
+      width: 100%;
+      height: auto;
+      border-radius: 12px;
+      margin-bottom: 1.5rem;
+    }
+  </style>
+
+
+<Layout>
+  <main class="flex justify-center min-h-screen bg-black py-8">
+    <!-- Left Column (empty) -->
+    <div class="column golden-column"></div>
+
+    <!-- Middle Column (image and text) -->
+    <div class="column golden-column content fade-in max-w-[61.8%] mx-auto transition-all ease-in-out transform duration-700">
+      <!-- Image at the top -->
+      <Image src={aboutImage} alt="About me" class="image w-full h-auto rounded-lg mb-6" />
+
+      <!-- Text content -->
+      <h1 class="text-3xl font-bold text-center text-gray-800 mb-4">About the Photographer</h1>
+      <p class="bio text-lg text-justify text-gray-700 leading-relaxed">
+        John Doe is a passionate photographer who captures life's most cherished moments. With over a decade of experience, he specializes in portrait and landscape photography. His work has been featured in multiple exhibitions and publications, and he strives to convey emotion and stories through every shot.
+      </p>
+    </div>
+
+    <!-- Right Column (empty) -->
+    <div class="column golden-column"></div>
+  </main>
+
+  <script is:inline>
+    document.addEventListener("DOMContentLoaded", function () {
+      const contentElement = document.querySelector('.content');
+      contentElement.classList.add('fade-in-visible');
+    });
+  </script>
+</Layout>
