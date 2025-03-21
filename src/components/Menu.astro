@@ -1,27 +1,41 @@
 ---
 import MenuItem from "./MenuItem.astro";
 import MenuDivider from "./MenuDivider.astro";
+import MailForm from "./MailForm.astro";
 
 const menuItems = [
-  { name: "Home", link: "/" },
-  { name: "About", link: "/about" },
-  { name: "Services", link: "/services" },
-  { name: "Portfolio", link: "/portfolio" },
-  { name: "Contact", link: "/contact" }
+    { name: "Home", link: "/" },
+    { name: "About", link: "/about" },
+    { name: "Shop", link: "/shop" },
+    { name: "Portfolio", link: "/portfolio" },
 ];
 
-const backgroundColor = "#222";  // Example background color
-const oppositeColor = "#ddd";    // Contrast color
+const backgroundColor = "#222"; // Example background color
+const oppositeColor = "#ddd"; // Contrast color
 ---
+
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;500&display=swap');
+    @import url("https://fonts.googleapis.com/css2?family=Oswald:wght@300;500&display=swap");
 </style>
 
-<nav class="fixed top-0 right-0 h-screen flex flex-col justify-center items-end pr-6">
-  {menuItems.map((item, index) => (
-    <>
-      <MenuItem text={item.name} link={item.link} color={oppositeColor} />
-      {index < menuItems.length - 1 && <MenuDivider color={oppositeColor} paddingRight={30} /> }
-    </>
-  ))}
+<nav
+    class="fixed top-0 right-0 h-screen flex flex-col justify-center items-end pr-6"
+>
+    {
+        menuItems.map((item, index) => (
+            <>
+                <MenuItem
+                    text={item.name}
+                    link={item.link}
+                    color={oppositeColor}
+                />
+                {index < menuItems.length - 1 && (
+                    <MenuDivider color={oppositeColor} paddingRight={30} />
+                )}
+            </>
+        ))
+    }
+
+    <MenuDivider color={oppositeColor} paddingRight={30} />
+    <MailForm text="Contact" />
 </nav>
