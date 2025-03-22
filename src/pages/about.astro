@@ -25,10 +25,15 @@ import aboutImage from "../assets/wp006.jpg";
     flex: 1;
   }
 
-  /* Golden Ratio Column Width */
-  .golden-column {
-    flex-basis: 0;
-    flex-grow: 1;
+  /* Middle Column Styling */
+  .middle-column {
+    max-width: 61.8%;
+  }
+
+  @media (max-width: 640px) {
+    .middle-column {
+      max-width: 100%;
+    }
   }
 
   /* Justify Content and Align Text */
@@ -37,29 +42,31 @@ import aboutImage from "../assets/wp006.jpg";
     line-height: 1.75;
   }
 
-  /* Image styling */
+  /* Image Styling - Force Full Width, Fixed Height */
   .image {
     width: 100%;
-    height: auto;
+    height: 30vh;  /* 30% of viewport height */
+    object-fit: cover; /* Crops to fit, prevents distortion */
     border-radius: 12px;
+    display: block;  /* Prevents unwanted inline spacing */
     margin-bottom: 1.5rem;
   }
 </style>
 
 <Layout>
   <main class="flex justify-center min-h-screen py-8">
-    <!-- Left Column (empty) -->
-    <div class="column golden-column"></div>
+    <!-- Left Column (empty on larger screens, hidden on mobile) -->
+    <div class="column golden-column hidden sm:block"></div>
 
     <!-- Middle Column (image and text) -->
     <div
-      class="column golden-column content fade-in max-w-[61.8%] mx-auto transition-all ease-in-out transform duration-700 pt-16"
+      class="column middle-column content fade-in mx-auto transition-all ease-in-out transform duration-700 pt-16"
     >
       <!-- Image at the top -->
       <Image
         src={aboutImage}
         alt="About me"
-        class="w-full h-[30%] object-cover rounded-lg mb-6"
+        class="image"
       />
 
       <!-- Text content -->
@@ -76,8 +83,8 @@ import aboutImage from "../assets/wp006.jpg";
       </p>
     </div>
 
-    <!-- Right Column (empty) -->
-    <div class="column golden-column"></div>
+    <!-- Right Column (empty on larger screens, hidden on mobile) -->
+    <div class="column golden-column hidden sm:block"></div>
   </main>
 
   <script is:inline>
