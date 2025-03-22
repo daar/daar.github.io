@@ -1,10 +1,7 @@
 ---
 const { text, link, color } = Astro.props;
 ---
-<a 
-  href={link} 
-  class="menu-item w-max px-4 py-2 text-xl font-bold uppercase tracking-wider transition-all duration-300 ease-out transform opacity-30 scale-100 hover:scale-110 hover:opacity-100 text-white text-right"
-  style={`font-family: 'Oswald', sans-serif;`}
->
+
+<a href={link} class="menu-item">
   {text}
 </a>

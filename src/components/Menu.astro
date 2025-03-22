@@ -10,16 +10,11 @@ const menuItems = [
     { name: "Shop", link: "/shop" },
 ];
 
-const backgroundColor = "#222"; // Example background color
 const oppositeColor = "#ddd"; // Contrast color
 ---
 
-<style>
-    @import url("https://fonts.googleapis.com/css2?family=Oswald:wght@300;500&display=swap");
-</style>
-
 <nav
-    class="fixed top-0 right-0 h-screen flex flex-col justify-center items-end pr-6"
+    class="font-wire fixed top-0 right-0 h-screen flex flex-col justify-center items-end pr-6 text-4xl font-bold w-max w-max tracking-wide transition-all duration-300 ease-out transform text-white text-right"
 >
     {
         menuItems.map((item, index) => (
