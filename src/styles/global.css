@@ -13,6 +13,7 @@
 .menu-item {
     @apply px-4 py-2 duration-300 ease-in-out opacity-30 scale-100 
            hover:scale-110 hover:opacity-100;
+    cursor: pointer;
   }
 
 body {
