@@ -1,47 +1,28 @@
 ---
-import "../styles/base.css";
-import "../styles/global.css";
+import { ClientRouter } from "astro:transitions";
+import '../css/base.css';
+import '../css/transitions.css';
+
+interface Props {
+  title: string
+}
+
+const { title } = Astro.props
 ---
 
 <!doctype html>
-<html lang="en" class="no-js">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<title>Darius Blaszyk | Photography</title>
-		<meta name="description" content="" />
-		<meta name="keywords" content="" />
-		<meta name="author" content="Codrops" />
-		<link rel="icon" type="image/svg+xml" href="/logo-min.svg" />
-		<link rel="stylesheet" href="https://use.typekit.net/jyi8res.css" />
-		<script>
-			document.documentElement.className = "js";
-			var supportsCssVars = function () {
-				var e,
-					t = document.createElement("style");
-				return (
-					(t.innerHTML = "root: { --tmp-var: bold; }"),
-					document.head.appendChild(t),
-					(e = !!(
-						window.CSS &&
-						window.CSS.supports &&
-						window.CSS.supports("font-weight", "var(--tmp-var)")
-					)),
-					t.parentNode.removeChild(t),
-					e
-				);
-			};
-			supportsCssVars() ||
-				alert(
-					"Please view this demo in a modern browser that supports CSS Variables.",
-				);
-		</script>
-	</head>
-
-	<body class="loading">
-		<slot />
-
-		<!-- Excerpts from: Propaganda (1928) by Edward Bernays -->
-		<script type="module" src="./src/scripts/index.js"></script>
-	</body>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Astro description" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <ClientRouter />
+    <script src="../scripts/transitions.ts"></script>
+  </head>
+  <body>
+    <slot />
+  </body>
 </html>

@@ -1,20 +1,15 @@
 {
-  "name": "daar",
+  "name": "astro-photo-gallery",
   "type": "module",
   "version": "0.0.1",
   "scripts": {
     "dev": "astro dev",
+    "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro"
   },
   "dependencies": {
-    "@tailwindcss/vite": "^4.0.14",
-    "astro": "^5.5.5",
-    "gsap": "^3.12.7",
-    "imagesloaded": "^5.0.0",
-    "parcel": "^2.14.4",
-    "split-type": "^0.3.4",
-    "tailwindcss": "^4.0.15"
+    "astro": "^5.5.5"
   }
 }
