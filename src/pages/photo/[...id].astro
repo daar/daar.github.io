@@ -1,29 +1,29 @@
 ---
-import MiniGrid from '../../components/MiniGrid.astro'
-import Layout from '../../layouts/Layout.astro'
-import { photos } from '../../photos'
+import MiniGrid from "../../components/MiniGrid.astro";
+import Layout from "../../layouts/Layout.astro";
+import { photos } from "../../photos";
 
 export async function getStaticPaths() {
-  return photos.map((photo) => ({ params: { id: photo.id } }))
+  return photos.map((photo) => ({ params: { id: photo.id } }));
 }
 
-const { id } = Astro.params
+const { id } = Astro.params;
 
-const photo = photos.find((photo) => photo.id == id)
-const photoIndex = photos.findIndex((photo) => photo.id == id)
-const photoNumber = photo?.id.toString().padStart(2, '0')
+const photo = photos.find((photo) => photo.id == id);
+const photoIndex = photos.findIndex((photo) => photo.id == id);
+const photoNumber = photo?.id.toString().padStart(2, "0");
 
-const prevPhoto = photos[photoIndex - 1]
-const nextPhoto = photos[photoIndex + 1]
+const prevPhoto = photos[photoIndex - 1];
+const nextPhoto = photos[photoIndex + 1];
 ---
 
-<Layout title="Astro + View Transitions Photo Gallery">
+<Layout title="Darius Blaszyk | Photography">
   <div class="content">
     <div class="content__item" id="item-1">
       <nav class="slide-nav">
         <div
           class="slide-nav__img slide-nav__img--prev"
-          style={prevPhoto ? `background-image:url(${prevPhoto.url});` : ''}
+          style={prevPhoto ? `background-image:url(${prevPhoto.url});` : ""}
         >
         </div>
         <img
@@ -34,7 +34,7 @@ const nextPhoto = photos[photoIndex + 1]
         />
         <div
           class="slide-nav__img slide-nav__img--next"
-          style={nextPhoto ? `background-image:url(${nextPhoto.url});` : ''}
+          style={nextPhoto ? `background-image:url(${nextPhoto.url});` : ""}
         >
         </div>
       </nav>
@@ -49,12 +49,12 @@ const nextPhoto = photos[photoIndex + 1]
         <p class="content__item-text">
           {photo?.description}
         </p>
-        <a
+        <!-- <a
           class="content__item-link oh"
           href="https://developer.chrome.com/docs/web-platform/view-transitions/"
           target="_blank"
           rel="noopener"><span class="oh__inner">View more</span></a
-        >
+        > -->
       </div>
     </div>
     <a href="/" class="back">
