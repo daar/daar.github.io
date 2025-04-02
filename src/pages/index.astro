@@ -1,39 +1,50 @@
 ---
-import GridCell from '../components/GridCell.astro'
-import Layout from '../layouts/Layout.astro'
-
-import { photos } from '../photos'
+import { Image } from "astro:assets";
+import Layout from "../layouts/Layout.astro";
+import mainImage from "../assets/wetplate-2018/wp001.jpg";
 ---
 
-<Layout title="Darius Blaszyk | Photography">
-  <main>
-    <div class="grid grid--large">
-      <div class="grid__cell grid__cell--padded">
-        <div class="frame">
-          <h1 class="frame__title oh">
-            <img src="/favicon.svg" width="32px" style="margin-top: 6px;margin-left: 6px;"/>
-            <br>
-            <br>
-            <span class="oh__inner">No man's land</span>
-          </h1>
-          <nav class="frame__links">
-            <span class="oh__inner">Where nature reclaims what’s hers.</span>
-            <div>
-              by <a
-                href="mailto:dhkblaszyk@gmail.com"
-                class="oh"
-                target="_blank"
-                rel="noopener"><span class="oh__inner">Darius Blaszyk</span></a
-              >
-            </div>
-          </nav>
-        </div>
-      </div>
-      {
-        photos.map((photo, index) => (
-          <GridCell photo={photo} photoIndex={index} />
-        ))
-      }
-    </div>
-  </main>
+<Layout>
+	<nav class="p-4">
+		<div class="container mx-auto flex items-center justify-between">
+			<a href="http://www.dariusblaszyk.com">
+				<img src="/favicon.svg" alt="Logo" class="h-8" />
+			</a>
+			<button id="menu-toggle" class="block md:hidden text-gray-700">
+				☰
+			</button>
+			<div id="navbar-menu" class="hidden md:flex space-x-6 text-lg">
+				<a href="about.html" class="hover:underline">About</a>
+				<a href="work.html" class="hover:underline">Work</a>
+				<a href="store.html" class="hover:underline">Store</a>
+			</div>
+		</div>
+	</nav>
+
+	<section class="flex-grow flex flex-col justify-center items-center p-6">
+		<figure class="text-center">
+			<Image
+				src={mainImage}
+				alt="Your Image"
+				class="w-full max-w-lg rounded-lg shadow-lg"
+			/>
+			<figcaption class="mt-2 text-gray-600">
+				Image caption or description
+			</figcaption>
+		</figure>
+	</section>
+
+	<footer class="text-center p-4 mt-auto">
+		<p>&copy; 2025 Darius Blaszyk. All rights reserved.</p>
+	</footer>
+
+	<script>
+		document
+			.getElementById("menu-toggle")
+			.addEventListener("click", function () {
+				document
+					.getElementById("navbar-menu")
+					.classList.toggle("hidden");
+			});
+	</script>
 </Layout>
