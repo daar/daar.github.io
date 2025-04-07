@@ -1,0 +1,71 @@
+---
+import "../styles/global.css";
+import Layout from "../layouts/Layout.astro";
+
+const photos = [
+  { label: "Photo 1", url: "https://picsum.photos/id/1011/2000/1000", title: "Sarah with peacelily", subtitle: "Wetplate 4x5, 2002" },
+  { label: "Photo 2", url: "https://picsum.photos/id/1015/2000/1000", title: "Mountainscape", subtitle: "Digital, 2018" },
+  { label: "Photo 3", url: "https://picsum.photos/id/1025/2000/1000", title: "Sunset Reflection", subtitle: "Film, 2015" },
+  // Add more photo objects here...
+];
+
+---
+
+<Layout title="Darius Blaszyk | Photography">
+  <section class="min-h-screen flex flex-col">
+    <div class="flex flex-1">
+      <!-- Sidebar -->
+      <aside class="w-1/5 bg-gray-100 p-4 text-lg">
+        <h2 class="text-xl font-semibold mb-4">Ecuador</h2>
+        <ul class="space-y-2">
+          {photos.map((photo, index) => (
+            <li>
+              <button
+                class="text-blue-600 hover:underline"
+                onclick={`showPhoto(${index})`}
+              >
+                {photo.label}
+              </button>
+            </li>
+          ))}
+        </ul>
+      </aside>
+
+      <!-- Main Photo -->
+      <div class="flex-1 flex items-center justify-center p-4">
+        <img id="main-photo" src={photos[0].url} alt={photos[0].title} class="rounded-xl shadow-xl max-h-[80vh] transition-opacity duration-500 opacity-100" />
+      </div>
+
+      <!-- Info Panel -->
+      <div class="w-1/5 flex flex-col justify-end p-4 text-right">
+        <div id="photo-info">
+          <h1 id="photo-title" class="text-2xl font-bold">{photos[0].title}</h1>
+          <p id="photo-subtitle" class="text-lg text-gray-500">{photos[0].subtitle}</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-white py-4 text-center border-t">
+      <p class="text-gray-500 text-sm">Copyright © 2023 Darius Blaszyk. All rights reserved.</p>
+    </footer>
+  </section>
+
+  <script>
+    const photos = JSON.parse(`${JSON.stringify(photos)}`);
+    const img = document.getElementById('main-photo');
+    const title = document.getElementById('photo-title');
+    const subtitle = document.getElementById('photo-subtitle');
+  
+    function showPhoto(index) {
+      img.classList.add('opacity-0');
+      setTimeout(() => {
+        img.src = photos[index].url;
+        title.textContent = photos[index].title;
+        subtitle.textContent = photos[index].subtitle;
+        img.classList.remove('opacity-0');
+      }, 300);
+    }
+  </script>
+  
+</Layout>
