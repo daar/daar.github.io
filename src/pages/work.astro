@@ -1,71 +1,59 @@
 ---
-import "../styles/global.css";
+// work.astro
 import Layout from "../layouts/Layout.astro";
+import { Image } from "astro:assets";
 
-const photos = [
-  { label: "Photo 1", url: "https://picsum.photos/id/1011/2000/1000", title: "Sarah with peacelily", subtitle: "Wetplate 4x5, 2002" },
-  { label: "Photo 2", url: "https://picsum.photos/id/1015/2000/1000", title: "Mountainscape", subtitle: "Digital, 2018" },
-  { label: "Photo 3", url: "https://picsum.photos/id/1025/2000/1000", title: "Sunset Reflection", subtitle: "Film, 2015" },
-  // Add more photo objects here...
-];
-
+// Images for "No Man's Land"
+import img1 from "../assets/wetplate-2018/wp001.jpg";
+import img2 from "../assets/wetplate-2018/wp002.jpg";
+import img3 from "../assets/wetplate-2018/wp003.jpg";
 ---
 
-<Layout title="Darius Blaszyk | Photography">
-  <section class="min-h-screen flex flex-col">
-    <div class="flex flex-1">
-      <!-- Sidebar -->
-      <aside class="w-1/5 bg-gray-100 p-4 text-lg">
-        <h2 class="text-xl font-semibold mb-4">Ecuador</h2>
-        <ul class="space-y-2">
-          {photos.map((photo, index) => (
-            <li>
-              <button
-                class="text-blue-600 hover:underline"
-                onclick={`showPhoto(${index})`}
-              >
-                {photo.label}
-              </button>
-            </li>
-          ))}
-        </ul>
-      </aside>
+<Layout>
+  <section class="px-6 pt-12 max-w-4xl mx-auto">
+    <!-- Removed inline font-size classes, relying on global styles -->
+    <h1 class="mb-2">No Man's Land</h1>
+    <p class="mb-12">
+      “No Man's Land” is a photographic exploration of forgotten and abandoned places — spaces where nature has slowly but surely begun to reclaim its ground. 
+      These images capture the silent tension between decay and rebirth, human absence and natural persistence. Shot using traditional large-format and wet plate techniques, the series invites the viewer to witness time layered into walls, roots, and dust.
+    </p>
 
-      <!-- Main Photo -->
-      <div class="flex-1 flex items-center justify-center p-4">
-        <img id="main-photo" src={photos[0].url} alt={photos[0].title} class="rounded-xl shadow-xl max-h-[80vh] transition-opacity duration-500 opacity-100" />
-      </div>
+    <div class="space-y-12">
+      <figure class="text-center md:text-left">
+        <Image 
+          src={img1} 
+          alt="Overgrown hallway in an abandoned building" 
+          width={320}
+          class="mx-auto md:mx-0 rounded-2xl shadow-lg" 
+        />
+        <figcaption class="mt-3">
+          <strong>“Encroachment”</strong> — Vines curl through broken windows, reminding us that nature never truly leaves.
+        </figcaption>
+      </figure>
 
-      <!-- Info Panel -->
-      <div class="w-1/5 flex flex-col justify-end p-4 text-right">
-        <div id="photo-info">
-          <h1 id="photo-title" class="text-2xl font-bold">{photos[0].title}</h1>
-          <p id="photo-subtitle" class="text-lg text-gray-500">{photos[0].subtitle}</p>
-        </div>
-      </div>
+      <figure class="text-center md:text-left">
+        <Image 
+          src={img2} 
+          alt="Nature reclaiming a concrete stairwell" 
+          width={320}
+          class="mx-auto md:mx-0 rounded-2xl shadow-lg" 
+        />
+        <figcaption class="mt-3">
+          <strong>“Ascent”</strong> — A forgotten stairwell becomes a vertical garden, where each crack welcomes life.
+        </figcaption>
+      </figure>
+
+      <figure class="text-center md:text-left">
+        <Image 
+          src={img3} 
+          alt="Old room with collapsing walls overtaken by moss" 
+          width={320}
+          class="mx-auto md:mx-0 rounded-2xl shadow-lg" 
+        />
+        <figcaption class="mt-3">
+          <strong>“Remnants”</strong> — The structure may falter, but the moss remains — persistent, quiet, alive.
+        </figcaption>
+      </figure>
     </div>
-
-    <!-- Footer -->
-    <footer class="bg-white py-4 text-center border-t">
-      <p class="text-gray-500 text-sm">Copyright © 2023 Darius Blaszyk. All rights reserved.</p>
-    </footer>
   </section>
-
-  <script>
-    const photos = JSON.parse(`${JSON.stringify(photos)}`);
-    const img = document.getElementById('main-photo');
-    const title = document.getElementById('photo-title');
-    const subtitle = document.getElementById('photo-subtitle');
-  
-    function showPhoto(index) {
-      img.classList.add('opacity-0');
-      setTimeout(() => {
-        img.src = photos[index].url;
-        title.textContent = photos[index].title;
-        subtitle.textContent = photos[index].subtitle;
-        img.classList.remove('opacity-0');
-      }, 300);
-    }
-  </script>
-  
 </Layout>

@@ -1,4 +1,5 @@
 ---
+// profile.astro
 import Layout from "../layouts/Layout.astro";
 import { Image } from "astro:assets";
 import profileImage from "../assets/wetplate-2018/wp001.jpg";
@@ -8,9 +9,9 @@ import profileImage from "../assets/wetplate-2018/wp001.jpg";
   <section class="flex-grow flex flex-col md:flex-row items-center md:items-start justify-between p-6 max-w-4xl mx-auto gap-8">
     <!-- Text Section -->
     <div class="md:w-1/2 text-left flex flex-col justify-start">
-      <h1 class="text-3xl font-bold text-gray-900">Darius Blaszyk</h1>
-      <h2 class="text-xl text-gray-600">The Hague, The Netherlands</h2>
-      <p class="mt-4 text-gray-700">
+      <h1 class="mb-2">Darius Blaszyk</h1>
+      <h2 class="text-gray-600 mb-4">The Hague, The Netherlands</h2>
+      <p class="text-gray-700">
         I am a photographer based in The Hague with a long history as a creative thinker, exploring various artistic techniques.
         In 2025, I decided to channel my creativity into photography, taking a hands-on approach and maintaining control over
         every aspect of the process whenever possible. Through experimentation, I discovered that capturing images on large-format
@@ -24,8 +25,11 @@ import profileImage from "../assets/wetplate-2018/wp001.jpg";
     <div class="md:w-1/2 flex justify-center md:justify-end">
       <figure class="text-center md:text-right">
         <Image src={profileImage} alt="Profile Picture" class="w-full max-w-lg rounded-[18px] shadow-lg" />
-        <figcaption class="mt-2 text-gray-600">Image caption or description</figcaption>
+        <figcaption class="mt-2 text-gray-600">
+          <strong>“Encroachment”</strong> — Vines curl through broken windows, reminding us that nature never truly leaves.
+        </figcaption>
       </figure>
     </div>
   </section>
 </Layout>
+

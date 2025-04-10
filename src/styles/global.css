@@ -1,12 +1,30 @@
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&display=swap');
 
 @import "tailwindcss";
+@plugin '@tailwindcss/typography';
 
 body {
-    font-family: "Cormorant Garamond", serif;
-    font-optical-sizing: auto;
-    font-weight: 100;
-    /* font-style: normal; */
+  font-family: "Cormorant Garamond", serif;
 
-    background: #f7f5ee;
+  background: #f7f5ee;
+}
+
+/* Style for h1 (Main heading) */
+h1 {
+  @apply text-4xl font-bold text-gray-900 mb-4;  /* Large, bold, gray heading */
+}
+
+/* Styling for h2 (Subtitle) */
+h2 {
+  @apply text-xl font-semibold text-gray-700 mt-2 mb-4; /* Medium size, semi-bold, gray text */
+}
+
+/* Style for p (Paragraph) */
+p {
+  @apply text-xl text-gray-700 leading-relaxed mb-6; /* Medium size, gray, relaxed line height */
+}
+
+/* Style for figcaption (Caption under images) */
+figcaption {
+  @apply text-xl text-gray-600 italic; /* Small size, gray, italicized */
 }
